@@ -1,7 +1,30 @@
+import { LEDGER_COLUMNS, MANIFEST_COLUMNS } from './hwmanifest'
 import type { ModuleMeta } from './types'
 
 // 模块元数据由仓库生成时写入：字段、状态、动作、流转目标都在这里，页面不再各自写一遍。
 export const MODULES: ModuleMeta[] = [
+  {
+    key: "hwmanifest",
+    name: "危废转移联单",
+    entity: "危险废物转移联单",
+    desc: "一车一条转移联单，挂危险废物类别、转移量、承运车号与处置单位，联单编号按批次连续生成；处置单位回执上传后才允许结算。",
+    fields: [...MANIFEST_COLUMNS],
+    statuses: ["待回执", "回执已上传", "已结算"],
+    actions: [],
+    actionTargets: {},
+    metrics: ["待回执联单", "回执已上传", "已结算联单"],
+  },
+  {
+    key: "hwledger",
+    name: "危废处置转出台账",
+    entity: "危废转出台账记录",
+    desc: "联单结算结果自动落入的转出台账，按联单编号唯一入账，重复结算不会多出第二份记录。",
+    fields: [...LEDGER_COLUMNS],
+    statuses: ["已结算"],
+    actions: [],
+    actionTargets: {},
+    metrics: ["已入账记录"],
+  },
   {
     key: "weighbridge",
     name: "垃圾进厂计量",

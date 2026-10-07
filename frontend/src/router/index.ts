@@ -9,6 +9,8 @@ const Turbine = () => import('@/views/turbine/index.vue')
 const Fluegas = () => import('@/views/fluegas/index.vue')
 const Cems = () => import('@/views/cems/index.vue')
 const Flyash = () => import('@/views/flyash/index.vue')
+const Hwmanifest = () => import('@/views/hwmanifest/index.vue')
+const Hwledger = () => import('@/views/hwledger/index.vue')
 const Slag = () => import('@/views/slag/index.vue')
 const Leachate = () => import('@/views/leachate/index.vue')
 const Equipcheck = () => import('@/views/equipcheck/index.vue')
@@ -32,6 +34,8 @@ const router = createRouter({
     { path: '/fluegas', name: 'fluegas', component: Fluegas },
     { path: '/cems', name: 'cems', component: Cems },
     { path: '/flyash', name: 'flyash', component: Flyash },
+    { path: '/hwmanifest', name: 'hwmanifest', component: Hwmanifest },
+    { path: '/hwledger', name: 'hwledger', component: Hwledger },
     { path: '/slag', name: 'slag', component: Slag },
     { path: '/leachate', name: 'leachate', component: Leachate },
     { path: '/equipcheck', name: 'equipcheck', component: Equipcheck },
